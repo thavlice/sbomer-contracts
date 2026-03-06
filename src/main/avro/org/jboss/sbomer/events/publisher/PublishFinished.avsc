@@ -35,6 +35,27 @@
             "doc": "An optional list of URLs pointing to the newly published SBOMs in the external system (e.g., a URL in a dependency checker)."
           },
           {
+            "name": "failures",
+            "type": [
+              "null",
+              {
+                "type": "array",
+                "items": {
+                  "name": "FailedPublish",
+                  "type": "record",
+                  "doc": "Details about a specific SBOM that failed to publish.",
+                  "fields": [
+                    { "name": "sbomUrl", "type": "string", "doc": "The URL of the SBOM that failed." },
+                    { "name": "errorCode", "type": ["null", "string"], "default": null, "doc": "Optional error code, e.g., an HTTP status." },
+                    { "name": "reason", "type": "string", "doc": "The error message or reason for failure." }
+                  ]
+                }
+              }
+            ],
+            "default": null,
+            "doc": "A list of SBOMs that failed to publish during this batch."
+          },
+          {
             "name": "result",
             "type": { "type": "map", "values": "string" },
             "default": {},
