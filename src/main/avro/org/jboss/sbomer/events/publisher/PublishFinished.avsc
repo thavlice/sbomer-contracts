@@ -41,6 +41,7 @@
               {
                 "type": "array",
                 "items": {
+                  "namespace": "org.jboss.sbomer.events.publisher",
                   "name": "FailedPublish",
                   "type": "record",
                   "doc": "Details about a specific SBOM that failed to publish.",
